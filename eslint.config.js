@@ -1,31 +1,34 @@
-import { defineConfig } from "eslint/config";
 import globals from "globals";
+import js from "@eslint/js";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 
-export default defineConfig([
+export default [
+  js.configs.recommended,
   {
     files: ["**/*.{js,jsx}"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
-      ecmaFeatures: {
-        jsx: true,
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true
+        }
       },
       globals: {
-        ...globals.browser,
-      },
+        ...globals.browser
+      }
     },
     settings: {
       react: {
-        version: "detect",
-      },
+        version: "detect"
+      }
     },
     plugins: {
-      react: react,
+      react,
       "react-hooks": reactHooks,
-      "react-refresh": reactRefresh,
+      "react-refresh": reactRefresh
     },
     rules: {
       "react-refresh/only-export-components": "off",
@@ -33,7 +36,7 @@ export default defineConfig([
       "react/prop-types": "off",
       "no-unsafe-finally": "off",
       "no-unused-vars": "off",
-      "react/jsx-key": "off",
-    },
-  },
-]);
+      "react/jsx-key": "off"
+    }
+  }
+];
