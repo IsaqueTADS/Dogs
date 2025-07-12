@@ -13,22 +13,22 @@ export default [
       sourceType: "module",
       parserOptions: {
         ecmaFeatures: {
-          jsx: true
-        }
+          jsx: true,
+        },
       },
       globals: {
-        ...globals.browser
-      }
+        ...globals.browser,
+      },
     },
     settings: {
       react: {
-        version: "detect"
-      }
+        version: "detect",
+      },
     },
     plugins: {
       react,
       "react-hooks": reactHooks,
-      "react-refresh": reactRefresh
+      "react-refresh": reactRefresh,
     },
     rules: {
       "react-refresh/only-export-components": "off",
@@ -36,7 +36,9 @@ export default [
       "react/prop-types": "off",
       "no-unsafe-finally": "off",
       "no-unused-vars": "off",
-      "react/jsx-key": "off"
-    }
-  }
+      "react/jsx-key": "off",
+      "react-hooks/rules-of-hooks": "error", // ativando regra de hooks
+      "react-hooks/exhaustive-deps": "warn", // ativando aviso de deps no useEffect
+    },
+  },
 ];
