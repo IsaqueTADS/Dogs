@@ -6,7 +6,6 @@ import Header from "./Components/Header";
 import Login from "./Components/Login/Login";
 import "./App.css";
 import { UserStorage } from "./Contexts/UserContext";
-import Conta from "./Conta";
 
 const App = () => {
   return (
@@ -17,7 +16,6 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login/*" element={<Login />} />
-            <Route path="/conta" element={<Conta />} />
           </Routes>
           <Footer />
         </UserStorage>

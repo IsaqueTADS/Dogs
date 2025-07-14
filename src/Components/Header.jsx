@@ -15,12 +15,12 @@ function Header() {
         </Link>
 
         {data ? (
-          <Link className={styles.login} to="/login">
-            {data.nome}
-            <Link to="/logim">
-              <button onClick={userLogout}>Sair</button>
+          <div style={{ display: "flex", gap: "10px" }}>
+            <Link className={styles.login} to="/conta">
+              {data.nome}
             </Link>
-          </Link>
+            <button onClick={userLogout}>Sair</button>
+          </div>
         ) : (
           <Link className={styles.login} to="/login">
             login / criar
