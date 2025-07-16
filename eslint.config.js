@@ -39,6 +39,7 @@ export default [
       "react/jsx-key": "off",
       "react-hooks/rules-of-hooks": "error", // ativando regra de hooks
       "react-hooks/exhaustive-deps": "warn", // ativando aviso de deps no useEffect
+      "no-undef": "error",
     },
   },
 ];
