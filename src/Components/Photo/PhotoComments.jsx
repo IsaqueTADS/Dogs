@@ -4,15 +4,23 @@ import PhotoCommentsForm from "./PhotoCommentsForm";
 import styles from "./PhotoComments.module.css";
 
 const PhotoComments = (props) => {
-  const [ comments, setComments ] = React.useState(() => props.comments);
+  const [comments, setComments] = React.useState(() => props.comments);
+  const commentsSection = React.useRef(null);
   const { login } = React.useContext(UserContext);
 
-  // console.log(comments);
+  React.useEffect(() => {
+    // commentsSection.current.scrollTop = commentsSection.current.scrollHeight;
+    if (commentsSection.current) {
+      commentsSection.current.scrollTo({
+        top: commentsSection.current.scrollHeight,
+        behavior: "smooth",
+      });
+    }
+  }, [comments]);
 
-  console.log(props.comments);
   return (
     <>
-      <ul className={StylePropertyMap.comments}>
+      <ul ref={commentsSection} className={styles.comments}>
         {comments.map((comment) => (
           <li key={comment.comment_ID}>
             <b>{comment.comment_author} :</b>
@@ -21,7 +29,7 @@ const PhotoComments = (props) => {
         ))}
       </ul>
 
-      {login && <PhotoCommentsForm id={props.id} setComments={setComments}/>}
+      {login && <PhotoCommentsForm id={props.id} setComments={setComments} />}
     </>
   );
 };
