@@ -12,7 +12,7 @@ const UserHeader = () => {
 
     switch (pathname) {
       case "/conta":
-        setTitle("Conta");
+        setTitle("Minha Conta");
         break;
       case "/conta/estatisticas":
         setTitle("Estatísticas");
