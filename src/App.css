@@ -52,9 +52,8 @@ a {
   margin: 0 auto;
 }
 
-.mainContainer{
+.mainContainer {
   margin-top: 2rem;
-  
 }
 
 .title {
@@ -90,4 +89,14 @@ a {
     opacity: 1;
     transform: initial;
   }
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh + 10rem);
+}
+
+.AppBody {
+  flex: 1;
 }
