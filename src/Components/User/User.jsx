@@ -6,9 +6,12 @@ import UserPhotoPost from "./UserPhotoPost";
 import UserStats from "./UserStats";
 import { UserContext } from "../../Contexts/UserContext";
 import NotFound from "../NotFound";
+import Loading from "../Helper/Loading";
 
 const User = () => {
   const { data } = React.useContext(UserContext);
+
+  if (!data) return <Loading />;
 
   return (
     <section className="container">
