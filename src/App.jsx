@@ -8,7 +8,7 @@ import "./App.css";
 import { UserStorage } from "./Contexts/UserContext";
 import User from "./Components/User/User";
 import ProtectRoute from "./Components/Helper/ProtectRoute";
-
+import Photo from "./Components/Photo/Photo"
 const App = () => {
   return (
     <div>
@@ -22,7 +22,9 @@ const App = () => {
               path="conta/*"
               element={<ProtectRoute>{<User />}</ProtectRoute>}
             />
+          <Route path="foto/:id" element={<Photo />} />
           </Routes>
+
           <Footer />
         </UserStorage>
       </BrowserRouter>
