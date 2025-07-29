@@ -93,5 +93,5 @@ Este projeto foi desenvolvido com base nas aulas do curso [**React Completo**](h
 ## 📄 Certificado
 
 
-📜 Você pode acessar o certificado original [clicando aqui](hhttps://www.origamid.com/certificate/34dc50a0)
+📜 Você pode acessar o certificado original [clicando aqui](https://www.origamid.com/certificate/34dc50a0)
 
